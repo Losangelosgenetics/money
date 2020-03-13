@@ -43,6 +43,7 @@ class Money
     class VariableExchange < Base
 
       attr_reader :mutex
+      attr_reader :mutex, :store
 
       # Available formats for importing/exporting rates.
       RATE_FORMATS = [:json, :ruby, :yaml].freeze
@@ -115,6 +116,7 @@ class Money
             fractional = calculate_fractional(from, to_currency)
             from.class.new(
               exchange(fractional, rate, &block), to_currency, self
+              exchange(fractional, rate, &block), to_currency
             )
           else
             raise UnknownRate, "No conversion rate known for '#{from.currency.iso_code}' -> '#{to_currency}'"

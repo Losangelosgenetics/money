@@ -29,6 +29,11 @@ describe Money::Bank::VariableExchange do
           bank = described_class.new('Object')
           expect(bank.store).to eql(Object)
         end
+        let(:bank) { described_class.new(custom_store) }
+
+        it 'sets #store to be custom store' do
+          expect(bank.store).to eql(custom_store)
+        end
       end
 
       describe "#exchange_with" do
@@ -79,6 +84,7 @@ describe Money::Bank::VariableExchange do
         end
 
         it "doesn't lose precision when handling larger amounts" do
+        it "doesn't loose precision when handling larger amounts" do
           expect(bank.exchange_with(Money.new(100_000_000_000_000_01, 'USD'), 'EUR')).to eq Money.new(133_000_000_000_000_01, 'EUR')
         end
       end
@@ -154,6 +160,7 @@ describe Money::Bank::VariableExchange do
     it "delegates options to store, options are a no-op" do
       expect(subject.store).to receive(:get_rate).with('USD', 'EUR')
       subject.get_rate('USD', 'EUR')
+      subject.get_rate('USD', 'EUR', without_mutex: true)
     end
   end
 

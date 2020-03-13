@@ -4,6 +4,12 @@ sudo: false
 rvm:
   - 1.9.3
   - 2.0.0
+---
+language: ruby
+sudo: false
+rvm:
+  - 1.9.3
+  - 2.0
   - 2.1.10
   - 2.2.10
   - 2.3.8
@@ -17,3 +23,23 @@ rvm:
 before_install:
   - gem install bundler --version '~> 1.17'
 script: bundle exec rake spec
+  - rbx-3
+  - jruby-9.0.5.0
+  - jruby-9.1.17.0
+  - jruby-9.2.7.0
+  - ruby-head
+  - jruby-head
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+    - rvm: jruby-head
+    - rvm: rbx-3
+  fast_finish: true
+before_install:
+  - gem install bundler --version '~> 1.17'
+script: bundle exec rspec spec
+notifications:
+  email:
+    - semmons99@gmail.com
+    - andreas@aloop.org
+    - weppos@weppos.net

@@ -1415,6 +1415,9 @@
   "mru": {
     "priority": 100,
     "iso_code": "MRU",
+  "mro": {
+    "priority": 100,
+    "iso_code": "MRO",
     "name": "Mauritanian Ouguiya",
     "symbol": "UM",
     "alternate_symbols": [],
@@ -1425,6 +1428,7 @@
     "decimal_mark": ".",
     "thousands_separator": ",",
     "iso_numeric": "929",
+    "iso_numeric": "478",
     "smallest_denomination": 1
   },
   "mur": {
@@ -2246,11 +2250,13 @@
     "iso_code": "UYU",
     "name": "Uruguayan Peso",
     "symbol": "$U",
+    "symbol": "$",
     "alternate_symbols": ["$U"],
     "subunit": "Centésimo",
     "subunit_to_unit": 100,
     "symbol_first": true,
     "html_entity": "$U",
+    "html_entity": "&#x20B1;",
     "decimal_mark": ",",
     "thousands_separator": ".",
     "iso_numeric": "858",
@@ -2261,6 +2267,7 @@
     "iso_code": "UZS",
     "name": "Uzbekistan Som",
     "symbol": "so'm",
+    "symbol": "",
     "alternate_symbols": ["so‘m", "сўм", "сум", "s", "с"],
     "subunit": "Tiyin",
     "subunit_to_unit": 100,
@@ -2337,6 +2344,7 @@
     "iso_code": "XAF",
     "name": "Central African Cfa Franc",
     "symbol": "CFA",
+    "symbol": "Fr",
     "disambiguate_symbol": "FCFA",
     "alternate_symbols": ["FCFA"],
     "subunit": "Centime",
